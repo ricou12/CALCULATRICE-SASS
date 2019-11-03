@@ -1,0 +1,142 @@
+.calculatrice__grid-container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px 100px 100px 100px 100px 100px;
+  grid-template-areas: "calculatrice__grid-container__title calculatrice__grid-container__title calculatrice__grid-container__title calculatrice__grid-container__title"
+    "calculatrice__grid-container__screen calculatrice__grid-container__screen calculatrice__grid-container__screen calculatrice__grid-container__screen"
+    "calculatrice__grid-container__empty calculatrice__grid-container__empty calculatrice__grid-container__btn-retour calculatrice__grid-container__btn-clear"
+    "calculatrice__grid-container__btn-x calculatrice__grid-container__btn-PE calculatrice__grid-container__btn-PF calculatrice__grid-container__btn-divise"
+    "calculatrice__grid-container__btn-7 calculatrice__grid-container__btn-8 calculatrice__grid-container__btn-9 calculatrice__grid-container__btn-multip"
+    "calculatrice__grid-container__btn-4 calculatrice__grid-container__btn-5 calculatrice__grid-container__btn-6 calculatrice__grid-container__btn-minus"
+    "calculatrice__grid-container__btn-1 calculatrice__grid-container__btn-2 calculatrice__grid-container__btn-3 calculatrice__grid-container__btn-add"
+    ". calculatrice__grid-container__btn-0 . calculatrice__grid-container__btn-equal";
+}
+
+.calculatrice__grid-container {
+ 
+  &__title {
+    grid-area: calculatrice__grid-container__title;
+  }
+
+  &__screen {
+    grid-area: calculatrice__grid-container__screen;
+    text-align: center;
+
+    &--text {
+      border: 1px dashed rgba(0, 0, 0, 0.4);
+      color: lime;
+      font-size: 4em;
+      text-align: right;
+      background-color: rgba(0, 0, 0, 1);
+      width: 99%;
+      height: 95%
+    }
+  }
+
+  &__empty {
+    grid-area: calculatrice__grid-container__empty;
+  }
+
+  &__btn {
+    &--color {
+      &-symb {
+        background-color: gray;
+        color:white;
+        font-size: 1.5em;
+      }
+
+      &-operateur {
+        background-color: lime;
+        color:black;
+        font-size: 1.5em;
+      }
+
+      &-num {
+        background-color: purple;
+        color:white;
+        font-size: 1.5em;
+      }
+    }
+
+    &-clear {
+      grid-area: calculatrice__grid-container__btn-clear;
+    }
+
+    &-retour {
+      grid-area: calculatrice__grid-container__btn-retour;
+    }
+
+    &-x {
+      grid-area: calculatrice__grid-container__btn-x;
+    }
+
+    &-PE {
+      grid-area: calculatrice__grid-container__btn-PE;
+    }
+
+    &-PF {
+      grid-area: calculatrice__grid-container__btn-PF;
+    }
+
+    &-divise {
+      grid-area: calculatrice__grid-container__btn-divise;
+    }
+
+    &-7 {
+      grid-area: calculatrice__grid-container__btn-7;
+    }
+
+    &-8 {
+      grid-area: calculatrice__grid-container__btn-8;
+    }
+
+    &-9 {
+      grid-area: calculatrice__grid-container__btn-9;
+    }
+
+    &-multip {
+      grid-area: calculatrice__grid-container__btn-multip;
+    }
+
+    &-4 {
+      grid-area: calculatrice__grid-container__btn-4;
+    }
+
+    &-5 {
+      grid-area: calculatrice__grid-container__btn-5;
+    }
+
+    &-6 {
+      grid-area: calculatrice__grid-container__btn-6;
+    }
+
+    &-minus {
+      grid-area: calculatrice__grid-container__btn-minus;
+    }
+
+    &-1 {
+      grid-area: calculatrice__grid-container__btn-1;
+    }
+
+    &-2 {
+      grid-area: calculatrice__grid-container__btn-2;
+    }
+
+    &-3 {
+      grid-area: calculatrice__grid-container__btn-3;
+    }
+
+    &-add {
+      grid-area: calculatrice__grid-container__btn-add;
+    }
+
+    &-0 {
+      grid-area: calculatrice__grid-container__btn-0;
+    }
+
+    &-equal {
+      grid-area: calculatrice__grid-container__btn-equal;
+    }
+  }
+}
+
