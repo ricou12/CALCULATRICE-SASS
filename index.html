@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" href="/tools/bootstrap.min.css"> -->
     <title>test</title>
 </head>
 
@@ -18,45 +17,67 @@
         </div>
 
         <div class="calculatrice__grid-container__screen">
-            <input class="calculatrice__grid-container__screen--text" type="text" value="test">
+            <input id="show" class="calculatrice__grid-container__screen--text" type="text" placeholder="calculate">
         </div>
 
         <div class="calculatrice__grid-container__empty"></div>
         <div class="calculatrice__grid-container__empty"></div>
 
-        <button class="calculatrice__grid-container__btn--color-symb calculatrice__grid-container__btn-retour">Retour</button>
-        <button class="calculatrice__grid-container__btn--color-symb calculatrice__grid-container__btn-clear">Clear</button>
+        <button id="CE" class="calculatrice__grid-container__btn--color-symb calculatrice__grid-container__btn-clear">Clear</button>
 
-        <button class="calculatrice__grid-container__btn--color-symb calculatrice__grid-container__btn-x">X</button>
-        <button class="calculatrice__grid-container__btn--color-symb calculatrice__grid-container__btn-PE">(</button>
-        <button class="calculatrice__grid-container__btn--color-symb calculatrice__grid-container__btn-PF">)</button>
-        <button class="calculatrice__grid-container__btn--color-operateur calculatrice__grid-container__btn-divise">/</button>
+        <button class="operation calculatrice__grid-container__btn--color-symb calculatrice__grid-container__btn-PE">(</button>
+        <button class="operation calculatrice__grid-container__btn--color-symb calculatrice__grid-container__btn-PF">)</button>
+        <button class="operation calculatrice__grid-container__btn--color-operateur calculatrice__grid-container__btn-divise">/</button>
 
 
-        <button class="calculatrice__grid-container__btn--color-num calculatrice__grid-container__btn-7">7</button>
-        <button class="calculatrice__grid-container__btn--color-num calculatrice__grid-container__btn-8">8</button>
-        <button class="calculatrice__grid-container__btn--color-num calculatrice__grid-container__btn-9">9</button>
-        <button class="calculatrice__grid-container__btn--color-operateur calculatrice__grid-container__btn-multip">*</button>
+        <button class="operation calculatrice__grid-container__btn--color-num calculatrice__grid-container__btn-7">7</button>
+        <button class="operation calculatrice__grid-container__btn--color-num calculatrice__grid-container__btn-8">8</button>
+        <button class="operation calculatrice__grid-container__btn--color-num calculatrice__grid-container__btn-9">9</button>
+        <button class="operation calculatrice__grid-container__btn--color-operateur calculatrice__grid-container__btn-multip">*</button>
 
 
-        <button class="calculatrice__grid-container__btn--color-num calculatrice__grid-container__btn-4">4</button>
-        <button class="calculatrice__grid-container__btn--color-num calculatrice__grid-container__btn-5">5</button>
-        <button class="calculatrice__grid-container__btn--color-num calculatrice__grid-container__btn-6">6</button>
-        <button class="calculatrice__grid-container__btn--color-operateur calculatrice__grid-container__btn-minus">-</button>
+        <button class="operation calculatrice__grid-container__btn--color-num calculatrice__grid-container__btn-4">4</button>
+        <button class="operation calculatrice__grid-container__btn--color-num calculatrice__grid-container__btn-5">5</button>
+        <button class="operation calculatrice__grid-container__btn--color-num calculatrice__grid-container__btn-6">6</button>
+        <button class="operation calculatrice__grid-container__btn--color-operateur calculatrice__grid-container__btn-minus">-</button>
 
-        <button class="calculatrice__grid-container__btn--color-num calculatrice__grid-container__btn-1">1</button>
-        <button class="calculatrice__grid-container__btn--color-num calculatrice__grid-container__btn-2">2</button>
-        <button class="calculatrice__grid-container__btn--color-num calculatrice__grid-container__btn-3">3</button>
-        <button class="calculatrice__grid-container__btn--color-operateur calculatrice__grid-container__btn-add">+</button>
+        <button class="operation calculatrice__grid-container__btn--color-num calculatrice__grid-container__btn-1">1</button>
+        <button class="operation calculatrice__grid-container__btn--color-num calculatrice__grid-container__btn-2">2</button>
+        <button class="operation calculatrice__grid-container__btn--color-num calculatrice__grid-container__btn-3">3</button>
+        <button class="operation calculatrice__grid-container__btn--color-operateur calculatrice__grid-container__btn-add">+</button>
 
-        <button class="calculatrice__grid-container__btn--color-num calculatrice__grid-container__btn-0">0</button>
-        <button class="calculatrice__grid-container__btn--color-operateur calculatrice__grid-container__btn-equal">=</button>
+        <button class="operation calculatrice__grid-container__btn--color-num calculatrice__grid-container__btn-0">0</button>
+        <button class="operation calculatrice__grid-container__btn--color-num calculatrice__grid-container__btn-virg">,</button>
+        <button id="egal" class="calculatrice__grid-container__btn--color-operateur calculatrice__grid-container__btn-equal">=</button>
     </div>
 
 
-    <script src="tools/bootstrap.min.js"></script>
-    <script src="tools/jquery.min.js"></script>
-    <script src="tools/popper.min.js"></script>
+    <script>
+        var calcul = "";
+        let $erase = document.getElementById('CE');
+        let $result = document.getElementById('egal');
+        let $input = document.getElementById('show');
+        const chiffres = document.querySelectorAll(".operation");
+
+        for (let chiffre of chiffres) {
+            chiffre.addEventListener('click', function () {
+                calcul += chiffre.textContent;
+                affCalcul(calcul);
+            });
+        }
+        $result.addEventListener('click', function () {
+            affCalcul(eval(calcul));
+            calcul = "";
+        });
+        $erase.addEventListener('click', function () {
+            calcul = "";
+            affCalcul(calcul);
+        });
+
+        function affCalcul(value) {
+            $input.setAttribute('value', value);
+        }
+    </script>
 </body>
 
 </html>

@@ -1,21 +1,23 @@
 .calculatrice__grid-container {
   display: grid;
+  justify-content: center;
   grid-template-columns: 100px 100px 100px 100px;
   grid-template-rows: 100px 100px 100px 100px 100px 100px 100px 100px;
   grid-template-areas: "calculatrice__grid-container__title calculatrice__grid-container__title calculatrice__grid-container__title calculatrice__grid-container__title"
     "calculatrice__grid-container__screen calculatrice__grid-container__screen calculatrice__grid-container__screen calculatrice__grid-container__screen"
-    "calculatrice__grid-container__empty calculatrice__grid-container__empty calculatrice__grid-container__btn-retour calculatrice__grid-container__btn-clear"
-    "calculatrice__grid-container__btn-x calculatrice__grid-container__btn-PE calculatrice__grid-container__btn-PF calculatrice__grid-container__btn-divise"
+    "calculatrice__grid-container__empty calculatrice__grid-container__empty . calculatrice__grid-container__btn-clear"
+    ". calculatrice__grid-container__btn-PE calculatrice__grid-container__btn-PF calculatrice__grid-container__btn-divise"
     "calculatrice__grid-container__btn-7 calculatrice__grid-container__btn-8 calculatrice__grid-container__btn-9 calculatrice__grid-container__btn-multip"
     "calculatrice__grid-container__btn-4 calculatrice__grid-container__btn-5 calculatrice__grid-container__btn-6 calculatrice__grid-container__btn-minus"
     "calculatrice__grid-container__btn-1 calculatrice__grid-container__btn-2 calculatrice__grid-container__btn-3 calculatrice__grid-container__btn-add"
-    ". calculatrice__grid-container__btn-0 . calculatrice__grid-container__btn-equal";
+    ". calculatrice__grid-container__btn-0 calculatrice__grid-container__btn-virg calculatrice__grid-container__btn-equal";
 }
 
 .calculatrice__grid-container {
- 
+
   &__title {
     grid-area: calculatrice__grid-container__title;
+    text-align: center;
   }
 
   &__screen {
@@ -23,7 +25,8 @@
     text-align: center;
 
     &--text {
-      border: 1px dashed rgba(0, 0, 0, 0.4);
+      border: none;
+      border-radius: 5px;
       color: lime;
       font-size: 4em;
       text-align: right;
@@ -41,33 +44,25 @@
     &--color {
       &-symb {
         background-color: gray;
-        color:white;
+        color: white;
         font-size: 1.5em;
       }
 
       &-operateur {
-        background-color: lime;
-        color:black;
+        background-color: rgb(108, 140, 108);
+        color: white;
         font-size: 1.5em;
       }
 
       &-num {
-        background-color: purple;
-        color:white;
+        background-color: rgb(0, 0, 0);
+        color: white;
         font-size: 1.5em;
       }
     }
 
     &-clear {
       grid-area: calculatrice__grid-container__btn-clear;
-    }
-
-    &-retour {
-      grid-area: calculatrice__grid-container__btn-retour;
-    }
-
-    &-x {
-      grid-area: calculatrice__grid-container__btn-x;
     }
 
     &-PE {
@@ -134,9 +129,12 @@
       grid-area: calculatrice__grid-container__btn-0;
     }
 
+    &-virg {
+      grid-area: calculatrice__grid-container__btn-virg;
+    }
+
     &-equal {
       grid-area: calculatrice__grid-container__btn-equal;
     }
   }
 }
-
