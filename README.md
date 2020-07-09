@@ -1,2 +1,2 @@
-# CALCULATRICE-SASS
-[Live !](https://ricou12.github.io/CALCULATRICE-SASS/)
+# HTML, CSS, SASS
+[Calculatrice](https://ricou12.github.io/CALCULATRICE-SASS/)
